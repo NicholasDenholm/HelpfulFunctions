@@ -1,6 +1,4 @@
 import time
-from caching import caching
-
 def runtime(f):
     def runtime_of_f(*args, **kwargs):
         start_time = time.time()
@@ -11,7 +9,6 @@ def runtime(f):
     return runtime_of_f
 
 @runtime
-@caching
 def add(x,y):
     time.sleep(0.2)
     return(x + y)
