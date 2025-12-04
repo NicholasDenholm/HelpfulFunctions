@@ -3,7 +3,7 @@
 echo $HOME
 whoami
 
-if [ -z "$1" ]; then
+if [ $# -eq 0 ]; then
     echo "Please provide a commit message"
     exit 1
 fi
@@ -18,5 +18,5 @@ echo "Git email: $git_email"
 
 
 git add .
-git commit -m "$1"
+git commit -m "$*"
 git push
